@@ -26,7 +26,7 @@
 
     header img {
       max-width: 250px;
-      opacity: 0.9; /* Blends with background */
+      opacity: 0.9;
       margin-bottom: 30px;
       filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.8));
       animation: fadeIn 2s ease-in-out;
@@ -46,8 +46,8 @@
       animation: fadeIn 2s ease-in-out;
     }
 
-    /* Product Section */
-    .products {
+    /* Sections */
+    .section {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -55,7 +55,7 @@
       padding: 60px 20px;
     }
 
-    .product {
+    .option {
       background: #181818;
       border: 2px solid #c29c68;
       border-radius: 15px;
@@ -66,24 +66,24 @@
       animation: fadeIn 1.5s ease-in-out;
     }
 
-    .product:hover {
+    .option:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(194, 156, 104, 0.5);
     }
 
-    .product h3 {
+    .option h3 {
       margin: 15px 0;
       color: #c29c68;
       font-family: 'Playfair Display', serif;
       letter-spacing: 1px;
     }
 
-    .product p {
+    .option p {
       font-size: 1.1em;
       margin: 10px 0;
     }
 
-    .product button {
+    .option button {
       background: #c29c68;
       color: #121212;
       padding: 10px 25px;
@@ -94,32 +94,31 @@
       transition: background 0.3s, transform 0.3s;
     }
 
-    .product button:hover {
+    .option button:hover {
       background: #d4af37;
       transform: scale(1.1);
     }
 
-    /* Why Choose Us Section */
-    .why-choose-us {
-      max-width: 800px;
-      margin: 60px auto;
-      text-align: center;
-      background: #121212;
-      padding: 40px 30px;
-      border-radius: 15px;
-      border: 2px solid #c29c68;
-      animation: slideUp 2s ease-in-out;
+    /* TikTok Button */
+    .tiktok-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #c29c68;
+      color: #121212;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
     }
 
-    .why-choose-us h2 {
-      color: #c29c68;
-      margin-bottom: 20px;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .why-choose-us p {
-      font-size: 1.2em;
-      line-height: 1.8;
+    .tiktok-button:hover {
+      background: #d4af37;
+      transform: scale(1.1);
     }
 
     /* Footer */
@@ -156,17 +155,6 @@
         opacity: 1;
       }
     }
-
-    @keyframes slideUp {
-      from {
-        transform: translateY(50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <body>
@@ -176,46 +164,104 @@
     <p>Elevate Your GTA Experience with Luxury & Speed</p>
   </header>
 
-  <section class="products">
-    <div class="product">
+  <!-- Money Options Section -->
+  <section class="section">
+    <div class="option">
       <h3>50M Bank</h3>
-      <p>Fast Delivery</p>
       <p>£3.25</p>
-      <!-- Redirecting to the specified URL when the button is clicked -->
-      <a href="https://13vrzz.github.io/Majestic-Millions/" target="_blank">
-        <button>Buy Now</button>
-      </a>
+      <button data-option="50M Bank">Buy Now</button>
     </div>
-    <div class="product">
+    <div class="option">
       <h3>100M Bank</h3>
-      <p>Faster Delivery</p>
       <p>£7.50</p>
-      <!-- Redirecting to the specified URL when the button is clicked -->
-      <a href="https://13vrzz.github.io/Majestic-Millions/" target="_blank">
-        <button>Buy Now</button>
-      </a>
+      <button data-option="100M Bank">Buy Now</button>
     </div>
-    <div class="product">
+    <div class="option">
       <h3>500M Bank</h3>
-      <p>Top Priority Delivery</p>
       <p>£14.99</p>
-      <!-- Redirecting to the specified URL when the button is clicked -->
-      <a href="https://13vrzz.github.io/Majestic-Millions/" target="_blank">
-        <button>Buy Now</button>
-      </a>
+      <button data-option="500M Bank">Buy Now</button>
     </div>
   </section>
 
-  <section class="why-choose-us">
-    <h2>Why Choose Majestic Millions?</h2>
-    <p><strong>Affordable Prices:</strong> Get the best value for your money.</p>
-    <p><strong>Reliable Service:</strong> Trusted by thousands of gamers worldwide.</p>
-    <p><strong>Fast Delivery:</strong> Your order is our top priority.</p>
+  <!-- Level Options Section -->
+  <section class="section">
+    <div class="option">
+      <h3>100 Levels</h3>
+      <p>£3.00</p>
+      <button data-option="100 Levels">Buy Now</button>
+    </div>
+    <div class="option">
+      <h3>500 Levels</h3>
+      <p>£7.50</p>
+      <button data-option="500 Levels">Buy Now</button>
+    </div>
+    <div class="option">
+      <h3>1000 Levels</h3>
+      <p>£12.99</p>
+      <button data-option="1000 Levels">Buy Now</button>
+    </div>
   </section>
 
+  <!-- Bundles Section -->
+  <section class="section">
+    <div class="option">
+      <h3>Normal Bundle</h3>
+      <p>15M Bank + Unlock All Guns</p>
+      <p>£3.50</p>
+      <button data-option="Normal Bundle">Buy Now</button>
+    </div>
+    <div class="option">
+      <h3>Normal+ Bundle</h3>
+      <p>50M Bank + Unlock All Guns</p>
+      <p>£5.99</p>
+      <button data-option="Normal+ Bundle">Buy Now</button>
+    </div>
+    <div class="option">
+      <h3>Premium Bundle</h3>
+      <p>100M Bank + Custom Level</p>
+      <p>£9.99</p>
+      <button data-option="Premium Bundle">Buy Now</button>
+    </div>
+    <div class="option">
+      <h3>Premium++ Bundle</h3>
+      <p>500M Bank + Custom Level + Unlock All Guns</p>
+      <p>£25.00</p>
+      <button data-option="Premium++ Bundle">Buy Now</button>
+    </div>
+  </section>
+
+  <!-- TikTok Button -->
+  <a class="tiktok-button" href="https://www.tiktok.com/@majesticmillionz?is_from_webapp=1&sender_device=pc" target="_blank">Follow our TikTok</a>
+
+  <!-- Footer -->
   <footer>
     <p>© 2024 Majestic Millions. All Rights Reserved.</p>
-    <p>Follow us on <a href="#" style="color: #c29c68; text-decoration: none;">Social Media</a></p>
   </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const data = {
+          option: button.dataset.option
+        };
+
+        fetch('https://discord.com/api/webhooks/1315868877200298056/neYt5Dh8BC9zrQf6SWWjs-yV44mm3JliAc7hb-mxJkIkOVUi-IgIbSArxSEKjFo7RZya', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ content: JSON.stringify(data) })
+        }).then(() => {
+          setTimeout(() => {
+            window.location.href = 'https://13vrzz.github.io/Majestic-Millions/';
+          }, 3000);
+        }).catch(err => {
+          console.error(err);
+          alert('Error sending data!');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
