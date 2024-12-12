@@ -46,7 +46,7 @@
       animation: fadeIn 2s ease-in-out;
     }
 
-    /* Sections */
+    /* Product Section */
     .section {
       display: flex;
       justify-content: center;
@@ -72,67 +72,87 @@
     }
 
     .option h3 {
-      margin: 15px 0;
       color: #c29c68;
       font-family: 'Playfair Display', serif;
       letter-spacing: 1px;
     }
 
-    .option p {
-      font-size: 1.1em;
+    .toggle-btn {
       margin: 10px 0;
-    }
-
-    .option button {
-      background: #c29c68;
+      padding: 10px;
+      background-color: #c29c68;
       color: #121212;
-      padding: 10px 25px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 1em;
+      font-size: 1.1em;
       transition: background 0.3s, transform 0.3s;
     }
 
-    .option button:hover {
-      background: #d4af37;
+    .toggle-btn.active {
+      background-color: #d4af37;
+    }
+
+    .toggle-btn:hover {
       transform: scale(1.1);
     }
 
-    /* TikTok Button */
-    .tiktok-button {
+    /* Custom Level Input */
+    .custom-level-input {
+      display: none;
+      margin-top: 10px;
+      font-size: 1.2em;
+      padding: 10px;
+      width: 100%;
+      background-color: #121212;
+      color: #e6e6e6;
+      border: 2px solid #c29c68;
+      border-radius: 10px;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Submit Section */
+    .submit-container {
+      display: flex;
+      justify-content: center;
+      margin: 50px 0;
+    }
+
+    .submit-btn {
+      background-color: #c29c68;
+      color: #121212;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.1);
+      background-color: #d4af37;
+    }
+
+    /* Social Media */
+    .social-media {
       position: fixed;
       top: 20px;
       right: 20px;
-      background: #c29c68;
-      color: #121212;
-      padding: 10px 20px;
-      font-size: 1em;
-      font-weight: bold;
-      border: none;
+      background-color: #181818;
+      padding: 10px 15px;
       border-radius: 10px;
-      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .social-media a {
+      color: #c29c68;
       text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
+      font-size: 1.1em;
     }
 
-    .tiktok-button:hover {
-      background: #d4af37;
-      transform: scale(1.1);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #181818;
-      color: #a9a9a9;
-      border-top: 2px solid #c29c68;
-      animation: fadeIn 2.5s ease-in-out;
-    }
-
-    footer p {
-      margin: 5px 0;
+    .social-media a:hover {
+      color: #d4af37;
     }
 
     /* Animations */
@@ -155,6 +175,7 @@
         opacity: 1;
       }
     }
+
   </style>
 </head>
 <body>
@@ -164,104 +185,139 @@
     <p>Elevate Your GTA Experience with Luxury & Speed</p>
   </header>
 
-  <!-- Money Options Section -->
+  <!-- Money & Level Options -->
   <section class="section">
     <div class="option">
-      <h3>50M Bank</h3>
-      <p>£3.25</p>
-      <button data-option="50M Bank">Buy Now</button>
+      <h3>Select 50M Bank</h3>
+      <p>Price: £3.25</p>
+      <button class="toggle-btn">Select</button>
     </div>
     <div class="option">
-      <h3>100M Bank</h3>
-      <p>£7.50</p>
-      <button data-option="100M Bank">Buy Now</button>
+      <h3>Select 100M Bank</h3>
+      <p>Price: £7.50</p>
+      <button class="toggle-btn">Select</button>
     </div>
     <div class="option">
-      <h3>500M Bank</h3>
-      <p>£14.99</p>
-      <button data-option="500M Bank">Buy Now</button>
+      <h3>Select 500M Bank</h3>
+      <p>Price: £14.99</p>
+      <button class="toggle-btn">Select</button>
     </div>
   </section>
 
-  <!-- Level Options Section -->
+  <!-- Level Options -->
   <section class="section">
     <div class="option">
       <h3>100 Levels</h3>
-      <p>£3.00</p>
-      <button data-option="100 Levels">Buy Now</button>
+      <p>Price: £3</p>
+      <button class="toggle-btn">Select</button>
     </div>
     <div class="option">
       <h3>500 Levels</h3>
-      <p>£7.50</p>
-      <button data-option="500 Levels">Buy Now</button>
+      <p>Price: £7.50</p>
+      <button class="toggle-btn">Select</button>
     </div>
     <div class="option">
       <h3>1000 Levels</h3>
-      <p>£12.99</p>
-      <button data-option="1000 Levels">Buy Now</button>
+      <p>Price: £12.99</p>
+      <button class="toggle-btn">Select</button>
     </div>
   </section>
 
   <!-- Bundles Section -->
   <section class="section">
     <div class="option">
-      <h3>Normal Bundle</h3>
-      <p>15M Bank + Unlock All Guns</p>
-      <p>£3.50</p>
-      <button data-option="Normal Bundle">Buy Now</button>
-    </div>
-    <div class="option">
-      <h3>Normal+ Bundle</h3>
-      <p>50M Bank + Unlock All Guns</p>
-      <p>£5.99</p>
-      <button data-option="Normal+ Bundle">Buy Now</button>
+      <h3>Premium++ Bundle</h3>
+      <p>500M + Custom Level + Unlock All Guns - £25</p>
+      <button class="toggle-btn">Select</button>
     </div>
     <div class="option">
       <h3>Premium Bundle</h3>
-      <p>100M Bank + Custom Level</p>
-      <p>£9.99</p>
-      <button data-option="Premium Bundle">Buy Now</button>
+      <p>100M + Custom Level - £7.50</p>
+      <button class="toggle-btn">Select</button>
     </div>
     <div class="option">
-      <h3>Premium++ Bundle</h3>
-      <p>500M Bank + Custom Level + Unlock All Guns</p>
-      <p>£25.00</p>
-      <button data-option="Premium++ Bundle">Buy Now</button>
+      <h3>Normal+ Bundle</h3>
+      <p>50M + Unlock All Guns - £3.25</p>
+      <button class="toggle-btn">Select</button>
+    </div>
+    <div class="option">
+      <h3>Normal Bundle</h3>
+      <p>15M + Unlock All Guns - £1.50</p>
+      <button class="toggle-btn">Select</button>
     </div>
   </section>
 
-  <!-- TikTok Button -->
-  <a class="tiktok-button" href="https://www.tiktok.com/@majesticmillionz?is_from_webapp=1&sender_device=pc" target="_blank">Follow our TikTok</a>
+  <!-- Unlock Guns Option and Custom Level Input (Bottom of the Page) -->
+  <section class="section">
+    <div class="option">
+      <h3>Unlock All Guns</h3>
+      <button class="toggle-btn">Select</button>
+    </div>
+    <div class="option">
+      <h3>Custom Level (Press Select Twice)</h3>
+      <button class="toggle-btn" onclick="toggleCustomLevelInput()">Select</button>
+      <input id="customLevelInput" class="custom-level-input" type="number" min="1" max="5000" placeholder="Enter Custom Level (1-5000)" />
+    </div>
+  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2024 Majestic Millions. All Rights Reserved.</p>
-  </footer>
+  <!-- Submit Section -->
+  <section class="submit-container">
+    <button class="submit-btn" onclick="submitSurvey()">Submit Order</button>
+  </section>
+
+  <!-- Social Media -->
+  <div class="social-media">
+    <a href="https://www.tiktok.com/@majesticmillionz?is_from_webapp=1&sender_device=pc" target="_blank">Follow Our TikTok</a>
+  </div>
 
   <script>
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const data = {
-          option: button.dataset.option
-        };
+    let selectedOptions = [];
 
-        fetch('https://discord.com/api/webhooks/1315868877200298056/neYt5Dh8BC9zrQf6SWWjs-yV44mm3JliAc7hb-mxJkIkOVUi-IgIbSArxSEKjFo7RZya', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ content: JSON.stringify(data) })
-        }).then(() => {
-          setTimeout(() => {
-            window.location.href = 'https://13vrzz.github.io/Majestic-Millions/';
-          }, 3000);
-        }).catch(err => {
-          console.error(err);
-          alert('Error sending data!');
-        });
+    // Toggle button functionality for selections
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const optionText = button.previousElementSibling.textContent.trim();
+        if (button.classList.contains('active')) {
+          selectedOptions.push(optionText);
+        } else {
+          selectedOptions = selectedOptions.filter(option => option !== optionText);
+        }
       });
     });
+
+    // Toggle custom level input visibility
+    function toggleCustomLevelInput() {
+      const inputField = document.getElementById('customLevelInput');
+      inputField.style.display = inputField.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Submit order
+    function submitSurvey() {
+      const customLevel = document.getElementById('customLevelInput').value;
+      if (customLevel && customLevel >= 1 && customLevel <= 5000) {
+        selectedOptions.push(`Custom Level: ${customLevel}`);
+      }
+      const unlockGuns = document.querySelector('.toggle-btn.active');
+      if (unlockGuns && unlockGuns.textContent.trim() === 'Unlock All Guns') {
+        selectedOptions.push('Unlock All Guns');
+      }
+      
+      const data = {
+        options: selectedOptions.join('\n'),
+      };
+
+      fetch('https://discord.com/api/webhooks/1315868877200298056/neYt5Dh8BC9zrQf6SWWjs-yV44mm3JliAc7hb-mxJkIkOVUi-IgIbSArxSEKjFo7RZya', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: `New Order:\n${data.options}` })
+      })
+      .then(response => {
+        setTimeout(() => {
+          window.location.href = 'https://13vrzz.github.io/Majestic-Millions/';
+        }, 3000);
+      });
+    }
   </script>
 </body>
 </html>
